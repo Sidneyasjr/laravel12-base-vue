@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TransitionRoot } from '@headlessui/vue';
-import { Head, Link, useForm, usePage } from '@inertiajs/vue3';
+import { Head, useForm, usePage } from '@inertiajs/vue3';
 
 import DeleteUser from '@/components/DeleteUser.vue';
 import HeadingSmall from '@/components/HeadingSmall.vue';
@@ -54,15 +54,20 @@ const submit = () => {
                 <form @submit.prevent="submit" class="space-y-6">
                     <div class="grid gap-2">
                         <Label for="name">Nome</Label>
-                        <Input id="name" class="mt-1 block w-full" v-model="form.name" required autocomplete="name"
-                               placeholder="Nome Completo" />
+                        <Input id="name" class="mt-1 block w-full" v-model="form.name" required autocomplete="name" placeholder="Nome Completo" />
                         <InputError class="mt-2" :message="form.errors.name" />
                     </div>
 
                     <div class="grid gap-2">
                         <Label for="username">Nome de usuário</Label>
-                        <Input id="username" class="mt-1 block w-full" v-model="form.username" required autocomplete="username"
-                               placeholder="Nome de usuário" />
+                        <Input
+                            id="username"
+                            class="mt-1 block w-full"
+                            v-model="form.username"
+                            required
+                            autocomplete="username"
+                            placeholder="Nome de usuário"
+                        />
                         <InputError class="mt-2" :message="form.errors.username" />
                     </div>
 
